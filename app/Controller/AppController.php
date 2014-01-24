@@ -60,4 +60,12 @@ class AppController extends Controller {
 		'Paginator' => ['settings' => ['paramType' => 'querystring', 'limit' => 30]]
 	];
 
+	public function beforeFilter() {
+		$this->loadModel('Client');
+		$clients = $this->Client->find('all', array(
+			'order' => array('Client.name'),
+		));
+		$this->set(compact('clients'));
+	}
+
 }
