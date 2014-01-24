@@ -1,0 +1,34 @@
+{
+  "name": "friendsofcake/app-template",
+  "description": "An empty CakePHP 2.4 application",
+  "type": "project",
+  "keywords" : [],
+  "homepage" : "http://cakephp.org",
+  "license" : "MIT",
+  "require" : {
+    "php" : ">=5.4",
+    "composer/installers" : "~1.0",
+    "pear-pear.cakephp.org/CakePHP" : "2.4.*",
+    "friendsofcake/crud" : "3.*",
+    "josegonzalez/dotenv": "0.1.*"
+  },
+  "require-dev": {
+    "cakephp/debug_kit" : "2.2.*"
+  },
+  "minimum-stability": "dev",
+  "repositories" : [
+    {
+      "type" : "pear",
+      "url": "http://pear.cakephp.org/"
+    }
+  ],
+  "config": {
+    "preferred-install": "source"
+  },
+  "extra": {
+    "heroku": {
+      "document-root": "app/webroot",
+      "index-document": "index.php"
+    }
+  }
+}
