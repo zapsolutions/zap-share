@@ -64,6 +64,7 @@ class AppController extends Controller {
 		$this->loadModel('Client');
 		$clients = $this->Client->find('all', array(
 			'order' => array('Client.name'),
+			'contain' => 'Project'
 		));
 		$this->set(compact('clients'));
 	}
