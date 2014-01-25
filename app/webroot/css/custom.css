@@ -1,3 +1,7 @@
-body {
-	padding-top: 70px;
+#sidebar ul.nav-list {
+	display: none;
+}
+
+#sidebar ul.nav-list > li > a {
+	padding-left: 50px;
 }
