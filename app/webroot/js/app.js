@@ -4,17 +4,17 @@ $(function() {
 		if ($(this).attr('data-state') === 'inactive') {
 			$(this).attr('data-state', 'active');
 			$('#sidebar li.active').removeClass('active');
-			$('#sidebar ul.nav-list').hide();
+			$('#sidebar ul.nav-pills ul').hide();
 			$(this).parent('li').addClass('active');
 			$('i.fa.fa-minus').removeClass('fa-minus').addClass('fa-plus');
 			$(this).children('i.fa.fa-plus').removeClass('fa-plus').addClass('fa-minus');
-			$(this).next('ul.nav-list').show();
+			$(this).next('ul.nav-pills ul').show();
 		} else {
 			$('#sidebar a.client').attr('data-state', 'inactive');
 			$('#sidebar li.active').removeClass('active');
-			$('#sidebar ul.nav-list').hide();
+			$('#sidebar ul.nav-pills ul').hide();
 			$('i.fa.fa-minus').removeClass('fa-minus').addClass('fa-plus');
-			$(this).next('ul.nav-list').hide();
+			$(this).next('ul.nav-pills ul').hide();
 		}
 	});
 

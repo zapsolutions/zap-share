@@ -1,7 +1,11 @@
-#sidebar ul.nav-list {
+#sidebar ul.nav-pills li > ul {
 	display: none;
 }
 
-#sidebar ul.nav-list > li > a {
+#sidebar ul.nav-pills > li > ul > li > a, #sidebar ul.nav-pills > li > ul > li > div.input-group {
 	padding-left: 50px;
+}
+
+.data-actions {
+	text-align: right;
 }
