@@ -50,7 +50,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 					<div id="sidebar" class="col-md-3">
 						<?php echo $this->element('sidebar'); ?>
 					</div>
-					<div class="col-md-9">
+					<div id="data-container" class="col-md-9">
 						<?php echo $this->fetch('content'); ?>
 					</div>
 				</div>

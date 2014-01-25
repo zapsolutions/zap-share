@@ -6,7 +6,7 @@
 			</a>
 			<ul class="nav nav-list">
 			<?php foreach ($client['Project'] as $project): ?>
-				<li><a href="#"><?php echo $project['name']; ?></a></li>
+				<li><a class="project" data-id="<?php echo $project['id']; ?>" href="#"><?php echo $project['name']; ?></a></li>
 			<?php endforeach; ?>
 			</ul>
 		</li>
