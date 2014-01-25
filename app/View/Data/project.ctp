@@ -16,8 +16,28 @@
 						</div>
 						<div class="col-md-3 data-actions">
 							<div class="btn-group">
-								<button type="button" class="btn btn-default">Edit</button>
-								<button type="button" class="btn btn-default">Delete</button>
+								<?php
+								echo $this->Html->link('Edit',
+									[
+										'controller' => 'data',
+										'action' => 'edit',
+										$datum['Datum']['id']
+									],
+									[
+										'class' => 'btn btn-default'
+									]
+								);
+								echo $this->Html->link('Delete',
+									[
+										'controller' => 'data',
+										'action' => 'delete',
+										$datum['Datum']['id']
+									],
+									[
+										'class' => 'btn btn-default'
+									]
+								);
+								?>
 							</div>
 						</div>
 					</div>

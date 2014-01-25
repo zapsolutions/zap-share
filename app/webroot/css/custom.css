@@ -2,7 +2,7 @@
 	display: none;
 }
 
-#sidebar ul.nav-pills > li > ul > li > a, #sidebar ul.nav-pills > li > ul > li > div.input-group {
+#sidebar ul.nav-pills > li > ul > li > a, #sidebar ul.nav-pills > li > ul > li div.input-group {
 	padding-left: 50px;
 }
 
