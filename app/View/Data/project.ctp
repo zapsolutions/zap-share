@@ -6,7 +6,10 @@
 		<div class="row">
 			<div class="col-md-12">
 				<?php if (empty($data)): ?>
-					<p>No data is associated with this project yet.</p>
+					<ul class="list-group">
+						<li class="list-group-item">
+							<p>No data is associated with this project yet.</p>
+						</li>
 				<?php else: ?>
 					<ul class="list-group">
 					<?php foreach ($data as $datum): ?>
@@ -47,43 +50,43 @@
 							</div>
 						</li>
 					<?php endforeach; ?>
-						<li class="list-group-item">
-							<div class="row">
-								<div class="col-md-3">
-									<?php echo $this->Form->create('Datum', ['controller' => 'data', 'action' => 'add']); ?>
-									<?php
-									echo $this->Form->input('key', [
-										'placeholder' => 'Key',
-										'class' => 'form-control',
-										'label' => false,
-										'div' => false
-									]);
-									?>
-								</div>
-								<div class="col-md-6">
-									<?php
-									echo $this->Form->input('value', [
-										'placeholder' => 'Value',
-										'class' => 'form-control',
-										'label' => false,
-										'div' => false
-									]);
-									?>
-								</div>
-								<div class="col-md-3 data-actions">
-									<?php
-									echo $this->Form->hidden('project_id', ['value' => $project['Project']['id']]);
-									echo $this->Form->button('Add',
-											[
-												'class' => 'btn btn-default'
-											]
-										);
-									?>
-								</div>
-							</div>
-						</li>
-					</ul>
 				<?php endif; ?>
+				<li class="list-group-item">
+						<div class="row">
+							<div class="col-md-3">
+								<?php echo $this->Form->create('Datum', ['controller' => 'data', 'action' => 'add']); ?>
+								<?php
+								echo $this->Form->input('key', [
+									'placeholder' => 'Key',
+									'class' => 'form-control',
+									'label' => false,
+									'div' => false
+								]);
+								?>
+							</div>
+							<div class="col-md-6">
+								<?php
+								echo $this->Form->input('value', [
+									'placeholder' => 'Value',
+									'class' => 'form-control',
+									'label' => false,
+									'div' => false
+								]);
+								?>
+							</div>
+							<div class="col-md-3 data-actions">
+								<?php
+								echo $this->Form->hidden('project_id', ['value' => $project['Project']['id']]);
+								echo $this->Form->button('Add',
+										[
+											'class' => 'btn btn-default'
+										]
+									);
+								?>
+							</div>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
