@@ -6,7 +6,11 @@
 	<?php else: ?>
 		<li>
 	<?php endif; ?>
+		<?php if ($activeMenu == $client['Client']['id']): ?>
+			<a class="client" href="#" data-id="<?php echo $client['Client']['id']; ?>" data-state="active">
+		<?php else: ?>
 			<a class="client" href="#" data-id="<?php echo $client['Client']['id']; ?>" data-state="inactive">
+		<?php endif; ?>
 				<i class="fa fa-plus"></i>&nbsp;&nbsp;<?php echo $client['Client']['name']; ?>
 			</a>
 			<ul class="nav nav-pills nav-stacked">

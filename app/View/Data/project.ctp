@@ -50,6 +50,7 @@
 						<li class="list-group-item">
 							<div class="row">
 								<div class="col-md-3">
+									<?php echo $this->Form->create('Datum', ['controller' => 'data', 'action' => 'add']); ?>
 									<?php
 									echo $this->Form->input('key', [
 										'placeholder' => 'Key',
@@ -71,11 +72,8 @@
 								</div>
 								<div class="col-md-3 data-actions">
 									<?php
-									echo $this->Html->link('Add',
-											[
-												'controller' => 'data',
-												'action' => 'add',
-											],
+									echo $this->Form->hidden('project_id', ['value' => $project['Project']['id']]);
+									echo $this->Form->button('Add',
 											[
 												'class' => 'btn btn-default'
 											]
