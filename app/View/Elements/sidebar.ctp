@@ -6,7 +6,20 @@
 			</a>
 			<ul class="nav nav-pills nav-stacked">
 				<?php foreach ($client['Project'] as $project): ?>
-					<li><a class="project" data-id="<?php echo $project['id']; ?>" href="#"><?php echo $project['name']; ?></a></li>
+					<li>
+						<?php
+						echo $this->Html->link($project['name'],
+							[
+								'controller' => 'data',
+								'action' => 'project',
+								$project['id']
+							],
+							[
+								'class' => 'project'
+							]
+						);
+						?>
+					</li>
 				<?php endforeach; ?>
 				<li>
 					<?php echo $this->Form->create('Project', ['controller' => 'project', 'action' => 'add']); ?>
