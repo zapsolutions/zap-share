@@ -1,6 +1,11 @@
 <ul class="nav nav-pills nav-stacked">
 <?php foreach ($clients as $client): ?>
+	<?php $activeMenu = $this->Session->read('Sidebar.active'); ?>
+	<?php if ($activeMenu == $client['Client']['id']): ?>
+		<li class="active">
+	<?php else: ?>
 		<li>
+	<?php endif; ?>
 			<a class="client" href="#" data-id="<?php echo $client['Client']['id']; ?>" data-state="inactive">
 				<i class="fa fa-plus"></i>&nbsp;&nbsp;<?php echo $client['Client']['name']; ?>
 			</a>

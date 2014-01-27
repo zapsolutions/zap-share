@@ -9,6 +9,7 @@ class SessionController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Session->write('Sidebar.active', $clientID);
 		}
+		$this->autoRender = false;
 	}
 
 }
