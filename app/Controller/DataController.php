@@ -31,4 +31,24 @@ class DataController extends AppController {
 		return $this->Crud->execute();
 	}
 
+	public function edit() {
+		$this->Crud->on('beforeRedirect', function ($e) {
+			if ($e->subject->success) {
+				$e->subject->url = $this->referer();
+			}
+		});
+
+		return $this->Crud->execute();
+	}
+
+	public function delete() {
+		$this->Crud->on('beforeRedirect', function ($e) {
+			if ($e->subject->success) {
+				$e->subject->url = $this->referer();
+			}
+		});
+
+		return $this->Crud->execute();
+	}
+
 }
