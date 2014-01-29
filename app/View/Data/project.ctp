@@ -1,7 +1,25 @@
 <div class="panel panel-primary">
 	<div class="panel-heading">
-	    <h3 class="panel-title"><?php echo $project['Project']['name']; ?></h3>
-	  </div>
+		<div class="row">
+			<div class="col-md-9">
+				<h3 class="panel-title"><?php echo $project['Project']['name']; ?></h3>
+			</div>
+			<div class="col-md-3 projects-actions">
+				<?php
+				echo $this->Html->link('Edit',
+					[
+						'controller' => 'projects',
+						'action' => 'edit',
+						$project['Project']['id']
+					],
+					[
+						'class' => 'btn btn-default'
+					]
+				);
+				?>
+			</div>
+		</div>
+	</div>
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-md-12">
@@ -34,16 +52,6 @@
 												'class' => 'btn btn-default'
 											]
 										);
-										// echo $this->Html->link('Delete',
-										// 	[
-										// 		'controller' => 'data',
-										// 		'action' => 'delete',
-										// 		$datum['Datum']['id']
-										// 	],
-										// 	[
-										// 		'class' => 'btn btn-default'
-										// 	]
-										// );
 										?>
 										<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $datum['Datum']['id']), ['class' => 'btn btn-default'], __('Are you sure you want to delete this?', $datum['Datum']['id'])); ?>
 									</div>
