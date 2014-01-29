@@ -12,3 +12,12 @@
 .data-actions {
 	text-align: right;
 }
+
+#footer {
+	text-align: center;
+	padding: 15px 0;
+}
+
+#footer a {
+	color: #000;
+}
