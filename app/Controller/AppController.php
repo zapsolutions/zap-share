@@ -48,8 +48,9 @@ class AppController extends Controller {
 			'actions' => [
 				'index' => 'Crud.Index',
 				'add'   => 'Crud.Add',
-				'edit'  => 'Crud.edit',
-				'view'  => 'Crud.View'
+				'edit'  => 'Crud.Edit',
+				'view'  => 'Crud.View',
+				'delete'  => 'Crud.Delete'
 			],
 			'listeners' => [
 				'Crud.Api',

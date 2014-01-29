@@ -21,4 +21,14 @@ class DataController extends AppController {
 		$this->set(compact('data', 'project'));
 	}
 
+	public function add() {
+		$this->Crud->on('beforeRedirect', function ($e) {
+			if ($e->subject->success) {
+				$e->subject->url = $this->referer();
+			}
+		});
+
+		return $this->Crud->execute();
+	}
+
 }

@@ -34,17 +34,18 @@
 												'class' => 'btn btn-default'
 											]
 										);
-										echo $this->Html->link('Delete',
-											[
-												'controller' => 'data',
-												'action' => 'delete',
-												$datum['Datum']['id']
-											],
-											[
-												'class' => 'btn btn-default'
-											]
-										);
+										// echo $this->Html->link('Delete',
+										// 	[
+										// 		'controller' => 'data',
+										// 		'action' => 'delete',
+										// 		$datum['Datum']['id']
+										// 	],
+										// 	[
+										// 		'class' => 'btn btn-default'
+										// 	]
+										// );
 										?>
+										<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $datum['Datum']['id']), ['class' => 'btn btn-default'], __('Are you sure you want to delete this?', $datum['Datum']['id'])); ?>
 									</div>
 								</div>
 							</div>
