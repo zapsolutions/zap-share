@@ -10,7 +10,7 @@ class ClientsController extends AppController {
 	public function beforeFilter() {
 		parent::beforeFilter();
 
-		if (in_array($this->action, ['add'])) {
+		if ($this->action === 'add') {
 			$this->Crud->on('beforeRedirect', function ($e) {
 				if ($e->subject->success) {
 					$e->subject->url = $this->referer();
