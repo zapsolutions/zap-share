@@ -3,20 +3,57 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "94b245ac6ca314d26266af0a6bab3a74",
+    "hash": "cb2557315e09189fdedda4e05741f548",
     "packages": [
+        {
+            "name": "cakedc/migrations",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CakeDC/migrations.git",
+                "reference": "7b9f7b58166a35678e635110a6d58fc55c7502f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CakeDC/migrations/zipball/7b9f7b58166a35678e635110a6d58fc55c7502f2",
+                "reference": "7b9f7b58166a35678e635110a6d58fc55c7502f2",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*"
+            },
+            "type": "cakephp-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cake Development Corporation",
+                    "email": "team@cakedc.com",
+                    "homepage": "http://cakedc.com"
+                }
+            ],
+            "description": "Migrations Plugin for CakePHP",
+            "homepage": "http://cakedc.com",
+            "keywords": [
+                "cakephp",
+                "migrations"
+            ],
+            "time": "2013-11-16 16:43:46"
+        },
         {
             "name": "composer/installers",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "53c31d1c216b64c1da999d5d25a97fcbf6810515"
+                "reference": "c1da3532e471f059585d7c56670b4e3de69ab97d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/53c31d1c216b64c1da999d5d25a97fcbf6810515",
-                "reference": "53c31d1c216b64c1da999d5d25a97fcbf6810515",
+                "url": "https://api.github.com/repos/composer/installers/zipball/c1da3532e471f059585d7c56670b4e3de69ab97d",
+                "reference": "c1da3532e471f059585d7c56670b4e3de69ab97d",
                 "shasum": ""
             },
             "replace": {
@@ -46,20 +83,23 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "http://dontkry.com",
+                    "homepage": "https://github.com/shama",
                     "role": "Developer"
                 }
             ],
             "description": "A multi-framework Composer library installer",
             "homepage": "http://composer.github.com/installers/",
             "keywords": [
-                "TYPO3 CMS",
-                "TYPO3 Flow",
-                "TYPO3 Neos",
+                "Craft",
+                "Hurad",
+                "MODX Evo",
+                "OXID",
                 "agl",
+                "annotatecms",
                 "cakephp",
                 "codeigniter",
                 "concrete5",
+                "croogo",
                 "drupal",
                 "elgg",
                 "fuelphp",
@@ -67,19 +107,23 @@
                 "joomla",
                 "kohana",
                 "laravel",
-                "li3",
                 "lithium",
+                "magento",
                 "mako",
+                "mediawiki",
                 "modulework",
                 "phpbb",
                 "piwik",
                 "ppi",
+                "shopware",
                 "silverstripe",
                 "symfony",
+                "typo3",
                 "wordpress",
-                "zend"
+                "zend",
+                "zikula"
             ],
-            "time": "2014-01-14 16:42:06"
+            "time": "2014-01-28 16:49:00"
         },
         {
             "name": "friendsofcake/crud",
@@ -196,10 +240,10 @@
         },
         {
             "name": "pear-pear.cakephp.org/CakePHP",
-            "version": "2.4.4",
+            "version": "2.4.5",
             "dist": {
                 "type": "file",
-                "url": "http://pear.cakephp.org/get/CakePHP-2.4.4.tgz",
+                "url": "http://pear.cakephp.org/get/CakePHP-2.4.5.tgz",
                 "reference": null,
                 "shasum": null
             },
@@ -207,7 +251,7 @@
                 "php": ">=5.2.8.0"
             },
             "replace": {
-                "pear-cakephp/cakephp": "== 2.4.4.0"
+                "pear-cakephp/cakephp": "== 2.4.5.0"
             },
             "type": "pear-library",
             "autoload": {
@@ -276,9 +320,9 @@
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "cakedc/migrations": 20
+    },
     "platform": {
         "php": ">=5.4"
     },

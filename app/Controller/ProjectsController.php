@@ -27,4 +27,14 @@ class ProjectsController extends AppController {
 		return $this->Crud->execute();
 	}
 
+	public function delete() {
+		$this->Crud->on('beforeRedirect', function ($e) {
+			if ($e->subject->success) {
+				$e->subject->url = ['controller' => 'pages', 'action' => 'display', 'home'];
+			}
+		});
+
+		return $this->Crud->execute();
+	}
+
 }

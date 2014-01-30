@@ -5,18 +5,30 @@
 				<h3 class="panel-title"><?php echo $project['Project']['name']; ?></h3>
 			</div>
 			<div class="col-md-3 projects-actions">
-				<?php
-				echo $this->Html->link('Edit',
-					[
-						'controller' => 'projects',
-						'action' => 'edit',
-						$project['Project']['id']
-					],
-					[
-						'class' => 'btn btn-default'
-					]
-				);
-				?>
+				<div class="btn-group">
+					<?php
+					echo $this->Html->link('Edit',
+						[
+							'controller' => 'projects',
+							'action' => 'edit',
+							$project['Project']['id']
+						],
+						[
+							'class' => 'btn btn-default'
+						]
+					);
+					?>
+					<?php
+					echo $this->Form->postLink(__('Delete'),
+						[
+							'controller' => 'projects',
+							'action' => 'delete',
+							$project['Project']['id']
+						],
+						['class' => 'btn btn-default'],
+						__('Are you sure you want to delete this? The data associated with this project will be deleted as well.'));
+					?>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -53,7 +65,7 @@
 											]
 										);
 										?>
-										<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $datum['Datum']['id']), ['class' => 'btn btn-default'], __('Are you sure you want to delete this?', $datum['Datum']['id'])); ?>
+										<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $datum['Datum']['id']), ['class' => 'btn btn-default'], __('Are you sure you want to delete this?')); ?>
 									</div>
 								</div>
 							</div>
