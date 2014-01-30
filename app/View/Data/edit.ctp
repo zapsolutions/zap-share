@@ -6,7 +6,6 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('key');
 		echo $this->Form->input('value');
-		echo $this->Form->input('type');
 		echo $this->Form->hidden('project_id');
 	?>
 	</fieldset>

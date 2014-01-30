@@ -13,9 +13,7 @@
 							'action' => 'edit',
 							$project['Project']['id']
 						],
-						[
-							'class' => 'btn btn-default'
-						]
+						['class' => 'btn btn-default']
 					);
 					?>
 					<?php
@@ -60,9 +58,7 @@
 												'action' => 'edit',
 												$datum['Datum']['id']
 											],
-											[
-												'class' => 'btn btn-default'
-											]
+											['class' => 'btn btn-default']
 										);
 										?>
 										<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $datum['Datum']['id']), ['class' => 'btn btn-default'], __('Are you sure you want to delete this?')); ?>
@@ -98,11 +94,7 @@
 							<div class="col-md-3 data-actions">
 								<?php
 								echo $this->Form->hidden('project_id', ['value' => $project['Project']['id']]);
-								echo $this->Form->button('Add',
-										[
-											'class' => 'btn btn-default'
-										]
-									);
+								echo $this->Form->button('Add', ['class' => 'btn btn-default']);
 								?>
 							</div>
 						</div>

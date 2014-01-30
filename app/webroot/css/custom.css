@@ -25,3 +25,20 @@
 .projects-actions {
 	text-align: right;
 }
+
+.delete-client {
+	display: none;
+	float: right;
+}
+
+#sidebar ul.nav-pills li > a:hover > i.delete-client {
+	display: inline-block;
+}
+
+#client-add {
+	margin-top: 10px;
+}
+
+form.client-add {
+	margin-top: 10px;
+}

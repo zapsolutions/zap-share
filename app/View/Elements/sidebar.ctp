@@ -31,7 +31,7 @@
 					</li>
 				<?php endforeach; ?>
 				<li>
-					<?php echo $this->Form->create('Project', ['controller' => 'project', 'action' => 'add']); ?>
+					<?php echo $this->Form->create('Project', ['controller' => 'project', 'action' => 'add', 'class' => 'client-add']); ?>
 					<div class="input-group">
 						<?php
 						echo $this->Form->input('name', [
@@ -52,7 +52,7 @@
 		</li>
 <?php endforeach; ?>
 </ul>
-<div class="row">
+<div id="client-add" class="row">
 	<div class="col-md-12">
 		<?php echo $this->Form->create('Client', ['controller' => 'client', 'action' => 'add']); ?>
 		<div class="input-group">
