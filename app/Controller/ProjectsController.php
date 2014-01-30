@@ -7,34 +7,22 @@ App::uses('AppController', 'Controller');
  */
 class ProjectsController extends AppController {
 
-	public function add() {
-		$this->Crud->on('beforeRedirect', function ($e) {
-			if ($e->subject->success) {
-				$e->subject->url = $this->referer();
-			}
-		});
+	public function beforeFilter() {
+		parent::beforeFilter();
 
-		return $this->Crud->execute();
-	}
-
-	public function edit() {
-		$this->Crud->on('beforeRedirect', function ($e) {
-			if ($e->subject->success) {
-				$e->subject->url = $this->referer();
-			}
-		});
-
-		return $this->Crud->execute();
-	}
-
-	public function delete() {
-		$this->Crud->on('beforeRedirect', function ($e) {
-			if ($e->subject->success) {
-				$e->subject->url = ['controller' => 'pages', 'action' => 'display', 'home'];
-			}
-		});
-
-		return $this->Crud->execute();
+		if (in_array($this->action, ['add', 'edit'])) {
+			$this->Crud->on('beforeRedirect', function ($e) {
+				if ($e->subject->success) {
+					$e->subject->url = $this->referer();
+				}
+			});
+		} else {
+			$this->Crud->on('beforeRedirect', function ($e) {
+				if ($e->subject->success) {
+					$e->subject->url = ['controller' => 'pages', 'action' => 'display', 'home'];
+				}
+			});
+		}
 	}
 
 }

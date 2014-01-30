@@ -7,14 +7,22 @@ App::uses('AppController', 'Controller');
  */
 class ClientsController extends AppController {
 
-	public function add() {
-		$this->Crud->on('beforeRedirect', function ($e) {
-			if ($e->subject->success) {
-				$e->subject->url = $this->referer();
-			}
-		});
+	public function beforeFilter() {
+		parent::beforeFilter();
 
-		return $this->Crud->execute();
+		if (in_array($this->action, ['add'])) {
+			$this->Crud->on('beforeRedirect', function ($e) {
+				if ($e->subject->success) {
+					$e->subject->url = $this->referer();
+				}
+			});
+		} else {
+			$this->Crud->on('beforeRedirect', function ($e) {
+				if ($e->subject->success) {
+					$e->subject->url = ['controller' => 'pages', 'action' => 'display', 'home'];
+				}
+			});
+		}
 	}
 
 }

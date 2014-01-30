@@ -7,6 +7,24 @@ App::uses('AppController', 'Controller');
  */
 class DataController extends AppController {
 
+	public function beforeFilter() {
+		parent::beforeFilter();
+
+		if (in_array($this->action, ['add', 'edit', 'delete'])) {
+			$this->Crud->on('beforeRedirect', function ($e) {
+				if ($e->subject->success) {
+					$e->subject->url = $this->referer();
+				}
+			});
+		} else {
+			$this->Crud->on('beforeRedirect', function ($e) {
+				if ($e->subject->success) {
+					$e->subject->url = ['controller' => 'pages', 'action' => 'display', 'home'];
+				}
+			});
+		}
+	}
+
 	public function project($projectID = null) {
 		$data = $this->Datum->find('all', [
 			'conditions' => [
@@ -19,36 +37,6 @@ class DataController extends AppController {
 			]
 		]);
 		$this->set(compact('data', 'project'));
-	}
-
-	public function add() {
-		$this->Crud->on('beforeRedirect', function ($e) {
-			if ($e->subject->success) {
-				$e->subject->url = $this->referer();
-			}
-		});
-
-		return $this->Crud->execute();
-	}
-
-	public function edit() {
-		$this->Crud->on('beforeRedirect', function ($e) {
-			if ($e->subject->success) {
-				$e->subject->url = $this->referer();
-			}
-		});
-
-		return $this->Crud->execute();
-	}
-
-	public function delete() {
-		$this->Crud->on('beforeRedirect', function ($e) {
-			if ($e->subject->success) {
-				$e->subject->url = $this->referer();
-			}
-		});
-
-		return $this->Crud->execute();
 	}
 
 }
