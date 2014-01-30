@@ -9,6 +9,10 @@
 	padding-left: 50px;
 }
 
+#sidebar ul.nav-pills > li > a:hover {
+	cursor: pointer;
+}
+
 .data-actions {
 	text-align: right;
 }
