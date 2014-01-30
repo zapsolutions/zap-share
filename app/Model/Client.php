@@ -29,7 +29,7 @@ class Client extends AppModel {
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
+			'order' => 'name ASC',
 			'limit' => '',
 			'offset' => '',
 			'exclusive' => '',
