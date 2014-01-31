@@ -63,11 +63,10 @@ class AppController extends Controller {
 
 	public function beforeFilter() {
 		$this->loadModel('Client');
-		$clients = $this->Client->find('all', array(
-			'order' => array('Client.name'),
+		$clients = $this->Client->find('all', [
+			'order' => ['Client.name'],
 			'contain' => 'Project'
-		));
+		]);
 		$this->set(compact('clients'));
 	}
-
 }

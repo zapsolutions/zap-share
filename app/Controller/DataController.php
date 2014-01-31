@@ -38,5 +38,4 @@ class DataController extends AppController {
 		]);
 		$this->set(compact('data', 'project'));
 	}
-
 }

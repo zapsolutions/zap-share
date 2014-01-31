@@ -11,5 +11,4 @@ class SessionController extends AppController {
 		}
 		$this->autoRender = false;
 	}
-
 }

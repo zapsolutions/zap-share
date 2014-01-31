@@ -24,5 +24,4 @@ class ClientsController extends AppController {
 			});
 		}
 	}
-
 }

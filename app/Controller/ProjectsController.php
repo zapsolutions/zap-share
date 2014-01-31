@@ -24,5 +24,4 @@ class ProjectsController extends AppController {
 			});
 		}
 	}
-
 }
