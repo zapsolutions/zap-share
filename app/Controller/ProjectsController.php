@@ -13,7 +13,7 @@ class ProjectsController extends AppController {
 		if (in_array($this->action, ['add', 'edit'])) {
 			$this->Crud->on('beforeRedirect', function ($e) {
 				if ($e->subject->success) {
-					$e->subject->url = $this->referer();
+					$e->subject->url = ['controller' => 'data', 'action' => 'project', $this->Project->getLastInsertID()];
 				}
 			});
 		} else {
