@@ -11,17 +11,15 @@ class ClientsController extends AppController {
 		parent::beforeFilter();
 
 		if ($this->action === 'add') {
-			$this->Crud->on('beforeRedirect', function ($e) {
-				if ($e->subject->success) {
-					$e->subject->url = $this->referer();
-				}
-			});
+			$redirectUrl = $this->referer();
 		} else {
-			$this->Crud->on('beforeRedirect', function ($e) {
-				if ($e->subject->success) {
-					$e->subject->url = ['controller' => 'pages', 'action' => 'display', 'home'];
-				}
-			});
+			$redirectUrl = ['controller' => 'pages', 'action' => 'display', 'home'];
 		}
+
+		$this->Crud->on('beforeRedirect', function ($e) {
+			if ($e->subject->success) {
+				$e->subject->url = $redirectUrl;
+			}
+		});
 	}
 }

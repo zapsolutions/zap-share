@@ -11,17 +11,15 @@ class ProjectsController extends AppController {
 		parent::beforeFilter();
 
 		if (in_array($this->action, ['add', 'edit'])) {
-			$this->Crud->on('beforeRedirect', function ($e) {
-				if ($e->subject->success) {
-					$e->subject->url = ['controller' => 'data', 'action' => 'project', $this->Project->getLastInsertID()];
-				}
-			});
+			$redirectUrl = ['controller' => 'data', 'action' => 'project', $this->Project->getLastInsertID()];
 		} else {
-			$this->Crud->on('beforeRedirect', function ($e) {
-				if ($e->subject->success) {
-					$e->subject->url = ['controller' => 'pages', 'action' => 'display', 'home'];
-				}
-			});
+			$redirectUrl = ['controller' => 'pages', 'action' => 'display', 'home'];
 		}
+
+		$this->Crud->on('beforeRedirect', function ($e) {
+			if ($e->subject->success) {
+				$e->subject->url = ['controller' => 'data', 'action' => 'project', $this->Project->getLastInsertID()];
+			}
+		});
 	}
 }

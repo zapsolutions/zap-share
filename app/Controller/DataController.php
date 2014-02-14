@@ -11,18 +11,16 @@ class DataController extends AppController {
 		parent::beforeFilter();
 
 		if (in_array($this->action, ['add', 'edit', 'delete'])) {
-			$this->Crud->on('beforeRedirect', function ($e) {
-				if ($e->subject->success) {
-					$e->subject->url = $this->referer();
-				}
-			});
+			$redirectUrl = $this->referer();
 		} else {
-			$this->Crud->on('beforeRedirect', function ($e) {
-				if ($e->subject->success) {
-					$e->subject->url = ['controller' => 'pages', 'action' => 'display', 'home'];
-				}
-			});
+			$redirectUrl = ['controller' => 'pages', 'action' => 'display', 'home'];
 		}
+
+		$this->Crud->on('beforeRedirect', function ($e) {
+			if ($e->subject->success) {
+				$e->subject->url = $redirectUrl;
+			}
+		});
 	}
 
 	public function project($projectID = null) {
