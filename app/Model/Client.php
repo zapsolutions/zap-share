@@ -22,8 +22,8 @@ class Client extends AppModel {
  *
  * @var array
  */
-	public $hasMany = array(
-		'Project' => array(
+	public $hasMany = [
+		'Project' => [
 			'className' => 'Project',
 			'foreignKey' => 'client_id',
 			'dependent' => false,
@@ -35,7 +35,7 @@ class Client extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)
-	);
+		]
+	];
 
 }

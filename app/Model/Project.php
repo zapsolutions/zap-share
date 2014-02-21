@@ -23,23 +23,23 @@ class Project extends AppModel {
  *
  * @var array
  */
-	public $belongsTo = array(
-		'Client' => array(
+	public $belongsTo = [
+		'Client' => [
 			'className' => 'Client',
 			'foreignKey' => 'client_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		)
-	);
+		]
+	];
 
 /**
  * hasMany associations
  *
  * @var array
  */
-	public $hasMany = array(
-		'Datum' => array(
+	public $hasMany = [
+		'Datum' => [
 			'className' => 'Datum',
 			'foreignKey' => 'project_id',
 			'dependent' => false,
@@ -51,7 +51,7 @@ class Project extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)
-	);
+		]
+	];
 
 }

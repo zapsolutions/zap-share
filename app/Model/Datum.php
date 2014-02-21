@@ -15,13 +15,13 @@ class Datum extends AppModel {
  *
  * @var array
  */
-	public $belongsTo = array(
-		'Project' => array(
+	public $belongsTo = [
+		'Project' => [
 			'className' => 'Project',
 			'foreignKey' => 'project_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		)
-	);
+		]
+	];
 }
