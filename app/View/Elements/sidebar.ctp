@@ -1,17 +1,17 @@
 <ul class="nav nav-pills nav-stacked">
 <?php foreach ($clients as $client): ?>
 	<?php $activeMenu = $this->Session->read('Sidebar.active'); ?>
-	<?php if ($activeMenu == $client['Client']['id']): ?>
+	<?php if ($activeMenu === $client['Client']['id']): ?>
 		<li class="active">
 	<?php else: ?>
 		<li>
 	<?php endif; ?>
-		<?php if ($activeMenu == $client['Client']['id']): ?>
+		<?php if ($activeMenu === $client['Client']['id']): ?>
 			<a class="client" data-id="<?= $client['Client']['id'] ?>" data-state="active">
 		<?php else: ?>
 			<a class="client" data-id="<?= $client['Client']['id'] ?>" data-state="inactive">
 		<?php endif; ?>
-				<i class="fa fa-plus"></i>&nbsp;&nbsp;<?php echo $client['Client']['name']; ?>
+				<i class="fa fa-plus"></i>&nbsp;&nbsp;<?= $client['Client']['name'] ?>
 			</a>
 			<ul class="nav nav-pills nav-stacked">
 				<?php foreach ($client['Project'] as $project): ?>
