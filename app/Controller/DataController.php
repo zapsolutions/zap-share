@@ -26,7 +26,7 @@ class DataController extends AppController {
 /**
   * Grab all data for a project
   *
-  * @param null|string The project's UUID
+  * @param null|string $projectID The project's UUID
   */
 	public function project($projectID = null) {
 		$data = $this->Datum->find('all', [
