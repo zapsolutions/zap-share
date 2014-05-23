@@ -7,8 +7,6 @@ class SessionController extends AppController {
 
 /**
   * Sets the client ID for persisting active menu expansion
-  *
-  * @param null|string $clientID The client's UUID
   */
 	public function set_active_menu($clientID = null) {
 		if ($this->request->is('post')) {
