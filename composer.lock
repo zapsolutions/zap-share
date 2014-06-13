@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "cb2557315e09189fdedda4e05741f548",
+    "hash": "345cb2dbbad6b7e5eaa9b08061162c45",
     "packages": [
         {
             "name": "cakedc/migrations",
@@ -11,16 +12,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CakeDC/migrations.git",
-                "reference": "7b9f7b58166a35678e635110a6d58fc55c7502f2"
+                "reference": "46cdcac5639fecfbcdc888ebac5a831058a91ec2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CakeDC/migrations/zipball/7b9f7b58166a35678e635110a6d58fc55c7502f2",
-                "reference": "7b9f7b58166a35678e635110a6d58fc55c7502f2",
+                "url": "https://api.github.com/repos/CakeDC/migrations/zipball/46cdcac5639fecfbcdc888ebac5a831058a91ec2",
+                "reference": "46cdcac5639fecfbcdc888ebac5a831058a91ec2",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "*"
+                "composer/installers": "*",
+                "php": ">=5.2.8"
             },
             "type": "cakephp-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -40,7 +42,7 @@
                 "cakephp",
                 "migrations"
             ],
-            "time": "2013-11-16 16:43:46"
+            "time": "2014-05-19 20:20:40"
         },
         {
             "name": "composer/installers",
@@ -48,20 +50,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "9a1fd4e191beaa5cab79c05f923d8bcdd01b4e94"
+                "reference": "11f7f8e82cbe1538721b72aa14bbd8007dde96e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/9a1fd4e191beaa5cab79c05f923d8bcdd01b4e94",
-                "reference": "9a1fd4e191beaa5cab79c05f923d8bcdd01b4e94",
+                "url": "https://api.github.com/repos/composer/installers/zipball/11f7f8e82cbe1538721b72aa14bbd8007dde96e1",
+                "reference": "11f7f8e82cbe1538721b72aa14bbd8007dde96e1",
                 "shasum": ""
             },
             "replace": {
+                "roundcube/plugin-installer": "*",
                 "shama/baton": "*"
             },
             "require-dev": {
                 "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "4.1.*"
             },
             "type": "composer-installer",
             "extra": {
@@ -91,11 +94,14 @@
             "homepage": "http://composer.github.com/installers/",
             "keywords": [
                 "Craft",
+                "Dolibarr",
                 "Hurad",
                 "MODX Evo",
                 "OXID",
+                "WolfCMS",
                 "agl",
                 "annotatecms",
+                "bitrix",
                 "cakephp",
                 "codeigniter",
                 "concrete5",
@@ -112,9 +118,11 @@
                 "mako",
                 "mediawiki",
                 "modulework",
+                "moodle",
                 "phpbb",
                 "piwik",
                 "ppi",
+                "roundcube",
                 "shopware",
                 "silverstripe",
                 "symfony",
@@ -123,7 +131,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2014-02-12 21:21:55"
+            "time": "2014-06-04 16:59:54"
         },
         {
             "name": "friendsofcake/crud",
@@ -240,10 +248,10 @@
         },
         {
             "name": "pear-pear.cakephp.org/CakePHP",
-            "version": "2.4.5",
+            "version": "2.5.1",
             "dist": {
                 "type": "file",
-                "url": "http://pear.cakephp.org/get/CakePHP-2.4.5.tgz",
+                "url": "http://pear.cakephp.org/get/CakePHP-2.5.1.tgz",
                 "reference": null,
                 "shasum": null
             },
@@ -251,7 +259,7 @@
                 "php": ">=5.2.8.0"
             },
             "replace": {
-                "pear-cakephp/cakephp": "== 2.4.5.0"
+                "pear-cakephp/cakephp": "== 2.5.1.0"
             },
             "type": "pear-library",
             "autoload": {
@@ -272,12 +280,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/debug_kit.git",
-                "reference": "9335a09cd0f8f16562a79c8eccf09fb301118550"
+                "reference": "cf7046af3d648aca9e3cf81804d1f6739658a0fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/9335a09cd0f8f16562a79c8eccf09fb301118550",
-                "reference": "9335a09cd0f8f16562a79c8eccf09fb301118550",
+                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/cf7046af3d648aca9e3cf81804d1f6739658a0fa",
+                "reference": "cf7046af3d648aca9e3cf81804d1f6739658a0fa",
                 "shasum": ""
             },
             "require": {
@@ -313,7 +321,7 @@
                 "debug",
                 "kit"
             ],
-            "time": "2014-02-06 18:59:51"
+            "time": "2014-05-26 17:05:27"
         }
     ],
     "aliases": [
