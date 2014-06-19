@@ -51,14 +51,8 @@ class AppController extends Controller {
 				'edit'  => 'Crud.Edit',
 				'view'  => 'Crud.View',
 				'delete'  => 'Crud.Delete'
-			],
-			'listeners' => [
-				'Crud.Api',
-				'Crud.ApiPagination',
-				'Crud.ApiQueryLog'
 			]
-		],
-		'Paginator' => ['settings' => ['paramType' => 'querystring', 'limit' => 30]]
+		]
 	];
 
 	public function beforeFilter() {
