@@ -1,13 +1,17 @@
 <div class="data form">
-<?php echo $this->Form->create('Datum'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit Datum'); ?></legend>
+	<?=
+	$this->Form->create('Datum', [
+		'inputDefaults' => [
+			'div' => false,
+			'label' => false
+		]
+	]);
+	?>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('key');
-		echo $this->Form->input('value');
+		echo $this->Form->input('key', ['class' => 'form-control']);
+		echo $this->Form->input('value', ['class' => 'form-control']);
 		echo $this->Form->hidden('project_id');
 	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+	<?= $this->Form->button('Save', ['class' => 'btn btn-default']) ?>
 </div>
