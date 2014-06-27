@@ -58,7 +58,7 @@ $cakeDescription = __d('cake_dev', 'ZAP Share');
 		<div id="footer">
 			<?php echo $this->Html->link(
 				'<i class="fa fa-github fa-lg"></i>',
-				'https://github.com/bcrowe/zap-share',
+				'https://github.com/zapsolutions/zap-share',
 				['target' => '_blank', 'escape' => false]
 			);
 			?>
