@@ -1,4 +1,4 @@
-<div class="data form">
+<div class="row">
 	<?=
 	$this->Form->create('Datum', [
 		'inputDefaults' => [
@@ -7,11 +7,15 @@
 		]
 	]);
 	?>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('key', ['class' => 'form-control']);
-		echo $this->Form->input('value', ['class' => 'form-control']);
-		echo $this->Form->hidden('project_id');
-	?>
-	<?= $this->Form->button('Save', ['class' => 'btn btn-default']) ?>
+	<?= $this->Form->input('id'); ?> 
+	<div class="form-group">
+		<?= $this->Form->input('key', ['class' => 'form-control']); ?>
+	</div>
+	<div class="form-group">
+		<?= $this->Form->input('value', ['class' => 'form-control']); ?>
+	</div>
+	<div class="form-group">
+		<?= $this->Form->hidden('project_id'); ?>
+		<?= $this->Form->button('Save', ['class' => 'btn btn-default']) ?>
+	</div>
 </div>
