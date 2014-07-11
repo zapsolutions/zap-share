@@ -16,9 +16,9 @@ class ProjectsController extends AppController {
 			$redirectUrl = ['controller' => 'pages', 'action' => 'display', 'home'];
 		}
 
-		$this->Crud->on('beforeRedirect', function ($e) {
+		$this->Crud->on('beforeRedirect', function ($e) use ($redirectUrl) {
 			if ($e->subject->success) {
-				$e->subject->url = ['controller' => 'data', 'action' => 'project', $this->Project->getLastInsertID()];
+				$e->subject->url = $redirectUrl;
 			}
 		});
 	}

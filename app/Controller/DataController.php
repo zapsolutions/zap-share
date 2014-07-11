@@ -16,7 +16,7 @@ class DataController extends AppController {
 			$redirectUrl = ['controller' => 'pages', 'action' => 'display', 'home'];
 		}
 
-		$this->Crud->on('beforeRedirect', function ($e) {
+		$this->Crud->on('beforeRedirect', function ($e) use ($redirectUrl) {
 			if ($e->subject->success) {
 				$e->subject->url = $redirectUrl;
 			}
