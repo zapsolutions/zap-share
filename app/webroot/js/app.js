@@ -45,6 +45,8 @@ zapApp.directive('projectData', function() {
 	return {
 		restrict: 'C',
 		requires: '^projectSearch',
+		replace: true,
+		templateUrl: '/templates/project_data_list.html',
 		link: function(scope, element, attrs) {
 			scope.href = attrs.href;
 
