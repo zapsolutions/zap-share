@@ -26,10 +26,6 @@ $(function() {
 
 var zapApp = angular.module('zapShare', []);
 
-// zapApp.directive('dataSearch', function() {
-
-// });
-
 zapApp.directive('projectData', function() {
 	return {
 		restrict: 'C',
@@ -46,6 +42,11 @@ zapApp.directive('projectData', function() {
 			$rootScope.$on('search_updated', function() {
 				$scope.updateFilter();
 			});
+
+			$scope.findData = function(data) {
+				var search = new RegExp($scope.filterText, 'g');
+				return data.Datum.key.match(search) || data.Datum.value.match(search);
+			}
 
 			$scope.getData = function() {
 				zapFactory.getData($scope.href)

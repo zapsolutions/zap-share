@@ -44,7 +44,7 @@
 							<input type="text" class="form-control data-search" placeholder="Search for data" />
 						</div>
 						<ul class="list-group project-data" data-href="<?= Router::url(['controller' => 'data', 'action' => 'get', $project['Project']['id'], 'ext' => 'json']); ?>">
-							<li class="list-group-item" ng-repeat="datum in data | filter: { Datum.key: filterText }">
+							<li class="list-group-item" ng-repeat="datum in data | filter: findData">
 								<div class="row">
 									<div class="col-md-3">
 										<strong>{{ datum.Datum.key }}</strong>
