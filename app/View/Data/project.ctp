@@ -54,7 +54,7 @@
 									</div>
 									<div class="col-md-3 data-actions">
 										<div class="btn-group">
-											<a href="<?= Router::url(['controller' => 'data', 'action' => 'edit']); ?>/{{ data.Datum.id }}" class="btn btn-default">Edit</a>
+											<a href="<?= Router::url(['controller' => 'data', 'action' => 'edit']); ?>/{{ datum.Datum.id }}" class="btn btn-default">Edit</a>
 											<form id="form_data_{{ datum.Datum.id }}" action="<?= Router::url(['controller' => 'data', 'action' => 'delete']); ?>/{{ datum.Datum.id }}" method="post" style="display: none;"></form>
 											<a href="javascript://" delete-key="{{ datum.Datum.id }}" data-form="#form_data_{{ datum.Datum.id }}" class="btn btn-default">Delete</a>
 										</div>
