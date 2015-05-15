@@ -43,25 +43,10 @@
 						<div class="form-group">
 							<input type="text" class="form-control data-search" placeholder="Search for data" />
 						</div>
-						<ul class="list-group project-data" data-href="<?= Router::url(['controller' => 'data', 'action' => 'get', $project['Project']['id'], 'ext' => 'json']); ?>">
-							<li class="list-group-item" ng-repeat="datum in data | filter: findData">
-								<div class="row">
-									<div class="col-md-3">
-										<strong>{{ datum.Datum.key }}</strong>
-									</div>
-									<div class="col-md-6">
-										{{ datum.Datum.value }}
-									</div>
-									<div class="col-md-3 data-actions">
-										<div class="btn-group">
-											<a href="<?= Router::url(['controller' => 'data', 'action' => 'edit']); ?>/{{ datum.Datum.id }}" class="btn btn-default">Edit</a>
-											<form id="form_data_{{ datum.Datum.id }}" action="<?= Router::url(['controller' => 'data', 'action' => 'delete']); ?>/{{ datum.Datum.id }}" method="post" style="display: none;"></form>
-											<a href="javascript://" delete-key="{{ datum.Datum.id }}" data-form="#form_data_{{ datum.Datum.id }}" class="btn btn-default">Delete</a>
-										</div>
-									</div>
-								</div>
-							</li>
-						</ul>
+						<project-data 
+							class="list-group project-data" 
+							data-href="<?= Router::url(['controller' => 'data', 'action' => 'get', $project['Project']['id'], 'ext' => 'json']); ?>">
+						</project-data>
 					</div>
 					<ul class="list-group">
 				<?php endif; ?>
