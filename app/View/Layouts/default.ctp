@@ -33,10 +33,6 @@ $cakeDescription = __d('cake_dev', 'ZAP Share');
 		echo $this->Html->css('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
 		echo $this->Html->css('custom');
 		echo $this->fetch('css');
-		echo $this->Html->script('//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js');
-		echo $this->Html->script('//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js');
-		echo $this->Html->script('app');
-		echo $this->fetch('script');
 	?>
 </head>
 <body>
@@ -44,7 +40,7 @@ $cakeDescription = __d('cake_dev', 'ZAP Share');
 	<div id="container">
 		<div id="content">
 			<?php echo $this->Session->flash(); ?>
-			<div class="container">
+			<div class="container" ng-app="zapShare">
 				<div class="row">
 					<div id="sidebar" class="col-md-3">
 						<?php echo $this->element('sidebar'); ?>
@@ -71,5 +67,12 @@ $cakeDescription = __d('cake_dev', 'ZAP Share');
 			?>
 		</div>
 	</div>
+	<?php
+	echo $this->Html->script('//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js');
+	echo $this->Html->script('//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js');
+	echo $this->Html->script('//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js');
+	echo $this->Html->script('app');
+	echo $this->fetch('script');
+	?>
 </body>
 </html>

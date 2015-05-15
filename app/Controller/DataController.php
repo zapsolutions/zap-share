@@ -39,4 +39,19 @@ class DataController extends AppController {
 		]);
 		$this->set(compact('data', 'project'));
 	}
+
+	/***
+	 * AJAX CALLS
+	 **/
+
+	public function get($projectId = null) {
+		$data = $this->Datum->find('all', [
+			'conditions' => [
+				'project_id' => $projectId
+			]
+		]);
+
+		$this->set(compact('data'));
+		$this->set('_serialize', ['data']);
+	}
 }
