@@ -23,3 +23,108 @@ $(function() {
 	});
 
 });
+
+var zapApp = angular.module('zapShare', []);
+
+zapApp.directive('projectData', function() {
+	return {
+		restrict: 'C',
+		requires: '^projectSearch',
+		link: function(scope, element, attrs) {
+			scope.href = attrs.href;
+			scope.getData();
+		},
+		controller: function($scope, $rootScope, $timeout, zapFactory, zapService) {
+			$scope.data = [];
+			$scope.href = null;
+			$scope.filterText = '';
+
+			$rootScope.$on('search_updated', function() {
+				$scope.updateFilter();
+			});
+
+			$scope.findData = function(data) {
+				var search = new RegExp($scope.filterText, 'g');
+				return data.Datum.key.match(search) || data.Datum.value.match(search);
+			}
+
+			$scope.getData = function() {
+				zapFactory.getData($scope.href)
+					.success(function(data) {
+						$scope.data = data.data;
+					})
+					.error(function(data) {
+
+					});
+			}
+
+			$scope.updateFilter = function() {
+				$timeout(function() {
+					$scope.filterText = zapService.retrieve('search');
+
+					$scope.$apply();
+				}, 0);
+			}
+		}
+	}
+});
+
+zapApp.directive('projectSearch', function() {
+	return {
+		restrict: 'C',
+		link: function(scope, element, attrs) {
+			element.find('input').bind('keyup', function(e) {
+				scope.set('search', this.value);
+			});
+
+			scope.set('search', element.find('input').val());
+		}, 
+		controller: function($scope, zapService) {
+			$scope.search = '';
+
+			$scope.set = function(key, val) {
+				return zapService.set(key, val);
+			}
+		}
+	}
+});
+
+
+// GATHER JSON DATA
+zapApp.factory('zapFactory', function($http) {
+	var factory = {};
+
+	factory.getData = function(href, data) {
+		if (typeof data === 'undefined') data = {};
+		return $http.post(href, data);
+	}
+
+	return factory;
+});
+
+zapApp.factory('zapService', function($rootScope) {
+	var srvc = {
+		search: '',
+
+        retrieve: function(key) {
+            if(typeof this[key] !== typeof undefined) return this[key];
+
+            return typeof undefined;
+        },
+
+        set: function(key, val) {
+            if(typeof key !== 'undefined' && typeof this[key] !== 'undefined') {
+                this[key] = val;
+                if(key === 'search') {
+                    $rootScope.$broadcast('search_updated');
+                }
+
+                return true;
+            }
+
+            return false;
+        },
+	};
+
+	return srvc;
+});
