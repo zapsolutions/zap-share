@@ -26,12 +26,28 @@ $(function() {
 
 var zapApp = angular.module('zapShare', []);
 
+zapApp.directive('deleteKey', function() {
+	return {
+		link: function(scope, element, attrs) {
+			element.bind('click', function(e) {
+				if(confirm('Are you sure you wish to delete this?')) {
+					console.log($(attrs.form));
+					$(attrs.form).submit();
+				}
+
+				return false;
+			});
+		}
+	}
+});
+
 zapApp.directive('projectData', function() {
 	return {
 		restrict: 'C',
 		requires: '^projectSearch',
 		link: function(scope, element, attrs) {
 			scope.href = attrs.href;
+
 			scope.getData();
 		},
 		controller: function($scope, $rootScope, $timeout, zapFactory, zapService) {
@@ -44,8 +60,8 @@ zapApp.directive('projectData', function() {
 			});
 
 			$scope.findData = function(data) {
-				var search = new RegExp($scope.filterText, 'g');
-				return data.Datum.key.match(search) || data.Datum.value.match(search);
+				var search = new RegExp($scope.filterText.toLowerCase(), 'g');
+				return data.Datum.key.toLowerCase().match(search) || data.Datum.value.toLowerCase().match(search);
 			}
 
 			$scope.getData = function() {
