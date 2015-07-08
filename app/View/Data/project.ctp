@@ -41,7 +41,7 @@
 				<?php else: ?>
 					<div class="project-search">
 						<div class="form-group">
-							<input type="text" class="form-control data-search" placeholder="Search for data" />
+							<input type="text" class="form-control data-search" placeholder="Search for data..." />
 						</div>
 						<project-data 
 							class="list-group project-data" 
