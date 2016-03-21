@@ -17,6 +17,10 @@
 	text-align: right;
 }
 
+.data-actions .btn {
+	transition: all .4s ease-out;
+}
+
 #footer {
 	text-align: center;
 	padding: 15px 0;

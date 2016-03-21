@@ -27,6 +27,8 @@ class DataController extends AppController {
   * Grab all data for a project
   */
 	public function project($projectID = null) {
+		if(!$this->Datum) $this->loadModel('Datum');
+
 		$data = $this->Datum->find('all', [
 			'conditions' => [
 				'project_id' => $projectID
@@ -45,6 +47,8 @@ class DataController extends AppController {
 	 **/
 
 	public function get($projectId = null) {
+		if(!$this->Datum) $this->loadModel('Datum');
+
 		$data = $this->Datum->find('all', [
 			'conditions' => [
 				'project_id' => $projectId

@@ -1,23 +1,65 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "345cb2dbbad6b7e5eaa9b08061162c45",
+    "hash": "3d5b3bbe73c55e9ca7fea040fb93ed1d",
     "packages": [
+        {
+            "name": "ad7six/dsn",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AD7six/php-dsn.git",
+                "reference": "649b42a6cc5878dacef8a3b41efbf72e133440c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AD7six/php-dsn/zipball/649b42a6cc5878dacef8a3b41efbf72e133440c0",
+                "reference": "649b42a6cc5878dacef8a3b41efbf72e133440c0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "suggest": {
+                "josegonzalez/dotenv": "0.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AD7six\\Dsn\\": "src",
+                    "AD7six\\Dsn\\Test\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andy Dawson",
+                    "email": "andydawson76@gmail.com",
+                    "homepage": "http://ad7six.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A utility for parsing and generating service DSNs",
+            "time": "2014-05-31 16:17:08"
+        },
         {
             "name": "cakedc/migrations",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CakeDC/migrations.git",
-                "reference": "46cdcac5639fecfbcdc888ebac5a831058a91ec2"
+                "reference": "6832b54d3be61242345aced8b5b8c8f36add8058"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CakeDC/migrations/zipball/46cdcac5639fecfbcdc888ebac5a831058a91ec2",
-                "reference": "46cdcac5639fecfbcdc888ebac5a831058a91ec2",
+                "url": "https://api.github.com/repos/CakeDC/migrations/zipball/6832b54d3be61242345aced8b5b8c8f36add8058",
+                "reference": "6832b54d3be61242345aced8b5b8c8f36add8058",
                 "shasum": ""
             },
             "require": {
@@ -42,7 +84,7 @@
                 "cakephp",
                 "migrations"
             ],
-            "time": "2014-05-19 20:20:40"
+            "time": "2015-10-29 22:11:34"
         },
         {
             "name": "composer/installers",
@@ -50,13 +92,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "11f7f8e82cbe1538721b72aa14bbd8007dde96e1"
+                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/11f7f8e82cbe1538721b72aa14bbd8007dde96e1",
-                "reference": "11f7f8e82cbe1538721b72aa14bbd8007dde96e1",
+                "url": "https://api.github.com/repos/composer/installers/zipball/bd9b14f094c89c8b5804a4e41edeb7853bb85046",
+                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046",
                 "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "1.0.0"
             },
             "replace": {
                 "roundcube/plugin-installer": "*",
@@ -66,9 +111,9 @@
                 "composer/composer": "1.0.*@dev",
                 "phpunit/phpunit": "4.1.*"
             },
-            "type": "composer-installer",
+            "type": "composer-plugin",
             "extra": {
-                "class": "Composer\\Installers\\Installer",
+                "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
@@ -86,8 +131,7 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama",
-                    "role": "Developer"
+                    "homepage": "https://github.com/shama"
                 }
             ],
             "description": "A multi-framework Composer library installer",
@@ -98,17 +142,23 @@
                 "Hurad",
                 "MODX Evo",
                 "OXID",
+                "SMF",
+                "Thelia",
                 "WolfCMS",
                 "agl",
+                "aimeos",
                 "annotatecms",
                 "bitrix",
                 "cakephp",
+                "chef",
                 "codeigniter",
                 "concrete5",
                 "croogo",
+                "dokuwiki",
                 "drupal",
                 "elgg",
                 "fuelphp",
+                "grav",
                 "installer",
                 "joomla",
                 "kohana",
@@ -122,6 +172,7 @@
                 "phpbb",
                 "piwik",
                 "ppi",
+                "puppet",
                 "roundcube",
                 "shopware",
                 "silverstripe",
@@ -131,20 +182,20 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2014-06-04 16:59:54"
+            "time": "2015-10-29 23:28:48"
         },
         {
             "name": "friendsofcake/crud",
-            "version": "3.0.9",
+            "version": "3.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfCake/crud.git",
-                "reference": "0be86cd5e8c5b868a61da02093c3b6af2c50b61c"
+                "reference": "e22c1563a51d86aac0d5054beee28b4afb60c802"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfCake/crud/zipball/0be86cd5e8c5b868a61da02093c3b6af2c50b61c",
-                "reference": "0be86cd5e8c5b868a61da02093c3b6af2c50b61c",
+                "url": "https://api.github.com/repos/FriendsOfCake/crud/zipball/e22c1563a51d86aac0d5054beee28b4afb60c802",
+                "reference": "e22c1563a51d86aac0d5054beee28b4afb60c802",
                 "shasum": ""
             },
             "require": {
@@ -197,7 +248,7 @@
                 "scaffolding",
                 "update"
             ],
-            "time": "2013-12-11 12:54:51"
+            "time": "2015-06-04 01:53:58"
         },
         {
             "name": "josegonzalez/dotenv",
@@ -248,10 +299,10 @@
         },
         {
             "name": "pear-pear.cakephp.org/CakePHP",
-            "version": "2.5.1",
+            "version": "2.5.9",
             "dist": {
                 "type": "file",
-                "url": "http://pear.cakephp.org/get/CakePHP-2.5.1.tgz",
+                "url": "http://pear.cakephp.org/get/CakePHP-2.5.9.tgz",
                 "reference": null,
                 "shasum": null
             },
@@ -259,7 +310,7 @@
                 "php": ">=5.2.8.0"
             },
             "replace": {
-                "pear-cakephp/cakephp": "== 2.5.1.0"
+                "pear-cakephp/cakephp": "== 2.5.9.0"
             },
             "type": "pear-library",
             "autoload": {
@@ -270,60 +321,13 @@
             "include-path": [
                 "/"
             ],
+            "license": [
+                "MIT License"
+            ],
             "description": "CakePHP is an application development framework for PHP 5.2+"
         }
     ],
-    "packages-dev": [
-        {
-            "name": "cakephp/debug_kit",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cakephp/debug_kit.git",
-                "reference": "cf7046af3d648aca9e3cf81804d1f6739658a0fa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/cf7046af3d648aca9e3cf81804d1f6739658a0fa",
-                "reference": "cf7046af3d648aca9e3cf81804d1f6739658a0fa",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "*",
-                "php": ">=5.3.0"
-            },
-            "type": "cakephp-plugin",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2.x-dev"
-                },
-                "installer-name": "DebugKit"
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mark Story",
-                    "homepage": "http://mark-story.com",
-                    "role": "Author"
-                },
-                {
-                    "name": "CakePHP Community",
-                    "homepage": "https://github.com/cakephp/debug_kit/graphs/contributors"
-                }
-            ],
-            "description": "CakePHP Debug Kit",
-            "homepage": "https://github.com/cakephp/debug_kit",
-            "keywords": [
-                "cakephp",
-                "debug",
-                "kit"
-            ],
-            "time": "2014-05-26 17:05:27"
-        }
-    ],
+    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
