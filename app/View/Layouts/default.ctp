@@ -71,6 +71,7 @@ $cakeDescription = __d('cake_dev', 'ZAP Share');
 	echo $this->Html->script('//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js');
 	echo $this->Html->script('//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js');
 	echo $this->Html->script('//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js');
+	echo $this->Html->script('lib/clipboard.min');
 	echo $this->Html->script('app');
 	echo $this->fetch('script');
 	?>

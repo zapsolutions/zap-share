@@ -103,7 +103,6 @@ zapApp.directive('clientRow', function($rootScope) {
 				var found = false;
 				angular.forEach($scope.projectNames, function(name) {
 					if(name.toLowerCase().match(regMatch)) {
-						console.log(name);
 						found = true;
 					}
 				});
@@ -119,7 +118,6 @@ zapApp.directive('deleteKey', function() {
 		link: function(scope, element, attrs) {
 			element.bind('click', function(e) {
 				if(confirm('Are you sure you wish to delete this?')) {
-					console.log($(attrs.form));
 					$(attrs.form).submit();
 				}
 
@@ -173,6 +171,27 @@ zapApp.directive('projectData', function() {
 			}
 		}
 	}
+});
+
+zapApp.directive('copyBtn', function() {
+	return {
+		restrict: 'C',
+		requires: '^projectData',
+		link: function(scope, element, attrs) {
+			var cboard = new Clipboard(element[0]);
+
+			cboard.on('success', function(e) {
+			    e.clearSelection();
+
+			    element.blur();
+			    element.addClass('btn-success');
+
+			    setTimeout(function() {
+			    	element.removeClass('btn-success');
+			    }, 2000);
+			});
+		}
+	};
 });
 
 zapApp.directive('projectSearch', function() {
