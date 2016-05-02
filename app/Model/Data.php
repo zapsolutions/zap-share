@@ -5,7 +5,7 @@ App::uses('AppModel', 'Model');
  *
  * @property Project $Project
  */
-class Datum extends AppModel {
+class Data extends AppModel {
 
 	public $useTable = 'data';
 

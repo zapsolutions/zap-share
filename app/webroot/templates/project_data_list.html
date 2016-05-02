@@ -1,18 +1,18 @@
 <ul>
-	<li class="list-group-item" ng-repeat="datum in data | filter: findData">
+	<li class="list-group-item" ng-repeat="data in data | filter: findData">
 		<div class="row">
 			<div class="col-md-3">
-				<strong>{{ datum.Datum.key }}</strong>
+				<strong>{{ data.Data.key }}</strong>
 			</div>
-			<div class="col-md-5" id="copy-value-{{ datum.Datum.id }}">
-				{{ datum.Datum.value }}
+			<div class="col-md-5" id="copy-value-{{ data.Data.id }}">
+				{{ data.Data.value }}
 			</div>
 			<div class="col-md-4 data-actions">
 				<div class="btn-group">
-					<a href="javascript://" class="btn btn-default copy-btn" data-clipboard-target="#copy-value-{{ datum.Datum.id }}">Copy</a>
-					<a href="/data/edit/{{ datum.Datum.id }}" class="btn btn-default">Edit</a>
-					<form id="form_data_{{ datum.Datum.id }}" action="/data/delete/{{ datum.Datum.id }}" method="post" style="display: none;"></form>
-					<a href="javascript://" delete-key="{{ datum.Datum.id }}" data-form="#form_data_{{ datum.Datum.id }}" class="btn btn-default">Delete</a>
+					<a href="javascript://" class="btn btn-default copy-btn" data-clipboard-target="#copy-value-{{ data.Data.id }}">Copy</a>
+					<a href="/data/edit/{{ data.Data.id }}" class="btn btn-default">Edit</a>
+					<form id="form_data_{{ data.Data.id }}" action="/data/delete/{{ data.Data.id }}" method="post" style="display: none;"></form>
+					<a href="javascript://" delete-key="{{ data.Data.id }}" data-form="#form_data_{{ data.Data.id }}" class="btn btn-default">Delete</a>
 				</div>
 			</div>
 		</div>

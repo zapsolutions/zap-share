@@ -51,8 +51,7 @@
 					<ul class="list-group">
 				<?php endif; ?>
 					<?=
-					$this->Form->create('Datum', [
-						'controller' => 'data',
+					$this->Form->create('Data', [
 						'action' => 'add',
 						'inputDefaults' => [
 							'div' => false,
