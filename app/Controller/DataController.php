@@ -23,18 +23,26 @@ class DataController extends AppController {
 		});
 	}
 
+	public function add() {
+		if($this->request->is('POST')) {
+			if($this->Data->save($this->request->data)) {
+				$this->redirect(['action' => 'project', $this->request->data['Data']['project_id']]);
+			}
+		}
+	}
+
 /**
   * Grab all data for a project
   */
 	public function project($projectID = null) {
 		if(!$this->Datum) $this->loadModel('Datum');
 
-		$data = $this->Datum->find('all', [
+		$data = $this->Data->find('all', [
 			'conditions' => [
 				'project_id' => $projectID
 			]
 		]);
-		$project = $this->Datum->Project->find('first', [
+		$project = $this->Data->Project->find('first', [
 			'conditions' => [
 				'Project.id' => $projectID
 			]
@@ -49,7 +57,7 @@ class DataController extends AppController {
 	public function get($projectId = null) {
 		if(!$this->Datum) $this->loadModel('Datum');
 
-		$data = $this->Datum->find('all', [
+		$data = $this->Data->find('all', [
 			'conditions' => [
 				'project_id' => $projectId
 			]

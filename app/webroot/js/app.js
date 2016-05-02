@@ -149,7 +149,7 @@ zapApp.directive('projectData', function() {
 
 			$scope.findData = function(data) {
 				var search = new RegExp($scope.filterText.toLowerCase(), 'g');
-				return data.Datum.key.toLowerCase().match(search) || data.Datum.value.toLowerCase().match(search);
+				return data.Data.key.toLowerCase().match(search) || data.Data.value.toLowerCase().match(search);
 			}
 
 			$scope.getData = function() {
