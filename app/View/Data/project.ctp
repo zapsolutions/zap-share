@@ -50,19 +50,19 @@
 					</div>
 					<ul class="list-group">
 				<?php endif; ?>
+					<?=
+					$this->Form->create('Datum', [
+						'controller' => 'data',
+						'action' => 'add',
+						'inputDefaults' => [
+							'div' => false,
+							'label' => false
+						]
+					])
+					?>
 					<li class="list-group-item">
 						<div class="row">
 							<div class="col-md-3">
-								<?=
-								$this->Form->create('Datum', [
-									'controller' => 'data',
-									'action' => 'add',
-									'inputDefaults' => [
-										'div' => false,
-										'label' => false
-									]
-								])
-								?>
 								<?=
 								$this->Form->input('key', [
 									'placeholder' => 'Key',
@@ -84,6 +84,7 @@
 							</div>
 						</div>
 					</li>
+					<?= $this->Form->end(); ?>
 				</ul>
 			</div>
 		</div>
