@@ -31,6 +31,16 @@ class DataController extends AppController {
 		}
 	}
 
+	public function edit($dataId) {
+		if($this->request->is('POST') || $this->request->is('PUT')) {
+			if($this->Data->save($this->request->data)) {
+				$this->redirect(['action' => 'project', $this->request->data['Data']['project_id']]);
+			}
+		} else {
+			$this->request->data = $this->Data->read(null, $dataId);
+		}
+	}
+
 /**
   * Grab all data for a project
   */

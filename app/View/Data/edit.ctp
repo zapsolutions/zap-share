@@ -1,6 +1,6 @@
 <div class="row">
 	<?=
-	$this->Form->create('Datum', [
+	$this->Form->create('Data', [
 		'inputDefaults' => [
 			'div' => false,
 			'label' => false
@@ -18,4 +18,5 @@
 		<?= $this->Form->hidden('project_id'); ?>
 		<?= $this->Form->button('Save', ['class' => 'btn btn-default']) ?>
 	</div>
+	<?= $this->Form->end(); ?>
 </div>
